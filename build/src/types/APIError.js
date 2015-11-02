@@ -85,6 +85,8 @@ var APIError = (function (_Error) {
       var fallbackTitle = "An unknown error occurred while trying to process this request.";
       var ErrorConstructor = this || APIError; // in case this isn't bound.
 
+      console.err(err);
+
       if (err instanceof APIError) {
         return err;
       }
@@ -98,7 +100,7 @@ var APIError = (function (_Error) {
 
         // Otherwise, we just show a generic error message.
         else {
-            return new ErrorConstructor(500, undefined, fallbackTitle);
+            return new ErrorConstructor(500, undefined, fallbackTitle, err);
           }
     }
   }]);

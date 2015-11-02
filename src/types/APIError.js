@@ -68,7 +68,7 @@ export default class APIError extends Error {
 
     // Otherwise, we just show a generic error message.
     else {
-      return new ErrorConstructor(500, undefined, fallbackTitle);
+      return new ErrorConstructor(500, undefined, fallbackTitle, err);
     }
 
   }
